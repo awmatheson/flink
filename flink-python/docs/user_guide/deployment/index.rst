@@ -16,12 +16,20 @@
     limitations under the License.
    ################################################################################
 
-Word Count
-==========
+=================
 
-.. literalinclude:: ../../../pyflink/examples/datastream/word_count.py
+This section contains detailed deployment guides for PyFlink in various environments.
 
-Streaming Word Count
-====================
+.. note::
+   These guides focus on PyFlink-specific deployment considerations. For comprehensive Flink deployment instructions,
+   including cluster setup, configuration, monitoring, and management, please refer to the
+   `Flink Deployment Documentation <https://nightlies.apache.org/flink/flink-docs-stable/docs/deployment/>`_.
 
-.. literalinclude:: ../../../pyflink/examples/datastream/streaming_word_count.py
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+   prepare
+   local
+   standalone
+   kubernetes

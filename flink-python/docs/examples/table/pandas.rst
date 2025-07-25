@@ -16,17 +16,16 @@
     limitations under the License.
    ################################################################################
 
-======
+========
 Pandas
-======
+========
 
 Pandas UDAF
------------
+===========
 
 .. literalinclude:: ../../../pyflink/examples/table/pandas/pandas_udaf.py
 
-
-Conversion From DataFrame
--------------------------
+Conversion from DataFrame
+=========================
 
 .. literalinclude:: ../../../pyflink/examples/table/pandas/conversion_from_dataframe.py

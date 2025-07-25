@@ -16,12 +16,14 @@
     limitations under the License.
    ################################################################################
 
-Word Count
-==========
+Cookbook
+========
 
-.. literalinclude:: ../../../pyflink/examples/datastream/word_count.py
+This section contains practical recipes for common PyFlink tasks. These recipes provide complete, working
+    examples that you can adapt for your own use cases.
 
-Streaming Word Count
-====================
+.. toctree::
+    :maxdepth: 2
+    :caption: Data Processing
 
-.. literalinclude:: ../../../pyflink/examples/datastream/streaming_word_count.py
+    word_count

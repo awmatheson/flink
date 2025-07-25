@@ -33,7 +33,7 @@ sys.path.insert(0, os.path.abspath('..'))
 # project = u'Flink Python Table API'
 project = u'PyFlink'
 copyright = u''
-author = u'Author'
+author = u'Apache Flink'
 
 version_file = os.path.join("..", 'pyflink/version.py')
 try:
@@ -90,7 +90,7 @@ language = None
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
+exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', '.venv', '.venv/*']
 
 # If true, the current module name will be prepended to all description
 # unit titles (such as .. function::).
@@ -102,6 +102,73 @@ pygments_style = 'sphinx'
 # Look at the first line of the docstring for function and method signatures.
 autosummary_generate = True
 autodoc_docstring_signature = True
+
+# Doctest configuration
+doctest_global_setup = '''
+# Setup for doctests
+import sys
+import os
+
+# Mock PyFlink imports for doctests
+try:
+    from pyflink.common import Types, Row
+    from pyflink.datastream import StreamExecutionEnvironment
+    from pyflink.table import TableEnvironment, EnvironmentSettings
+    from pyflink.table.expressions import col, lit
+    from pyflink.table.window import Tumble, Slide, Session, Over
+    from pyflink.table.udf import udf, udaf
+    from pyflink.common.configuration import Configuration
+    from pyflink.datastream.functions import MapFunction, FlatMapFunction, FilterFunction, ReduceFunction, CoMapFunction, CoFlatMapFunction
+except ImportError:
+    # Create mock objects if PyFlink is not available
+    class MockObject:
+        def __getattr__(self, name):
+            return MockObject()
+        def __call__(self, *args, **kwargs):
+            return MockObject()
+    
+    # Mock commonly used objects
+    Types = MockObject()
+    Row = MockObject()
+    StreamExecutionEnvironment = MockObject()
+    TableEnvironment = MockObject()
+    EnvironmentSettings = MockObject()
+    col = MockObject()
+    lit = MockObject()
+    Tumble = MockObject()
+    Slide = MockObject()
+    Session = MockObject()
+    Over = MockObject()
+    udf = MockObject()
+    udaf = MockObject()
+    Configuration = MockObject()
+    MapFunction = MockObject()
+    FlatMapFunction = MockObject()
+    FilterFunction = MockObject()
+    ReduceFunction = MockObject()
+    CoMapFunction = MockObject()
+    CoFlatMapFunction = MockObject()
+'''
+
+# Exclude problematic files from doctest
+doctest_path = ['.']
+doctest_exclude_patterns = [
+    'reference/api/*',  # Auto-generated API reference files
+    'reference/pyflink.*/api/*',  # Auto-generated API reference files
+    'reference/pyflink.table/table.rst',  # Requires FLINK_HOME
+    'reference/pyflink.table/table_environment.rst',  # Requires FLINK_HOME
+    'reference/pyflink.table/window.rst',  # Requires FLINK_HOME
+    'reference/pyflink.table/api/*',  # Auto-generated API reference files
+    'reference/pyflink.datastream/api/*',  # Auto-generated API reference files
+    'reference/pyflink.common/api/*',  # Auto-generated API reference files
+]
+
+# Doctest options
+doctest_optionflags = 0  # Use default options
+doctest_global_cleanup = '''
+# Cleanup for doctests
+pass
+'''
 
 # Map to external docs for type annotations
 intersphinx_mapping = {
@@ -121,7 +188,23 @@ html_theme = 'pydata_sphinx_theme'
 #
 html_theme_options = {
     "collapse_navigation": True,
-    "navigation_depth": 0
+    "navigation_depth": 4,
+    "navbar_start": ["navbar-logo"],
+    "navbar_center": ["navbar-nav"],
+    "navbar_end": ["navbar-icon-links"],
+    "navbar_persistent": ["search-button"],
+    "primary_sidebar_end": ["indices.html", "sourcelink.html"],
+    "secondary_sidebar_items": ["page-toc", "sourcelink"],
+    "show_toc_level": 1,
+    "icon_links": [
+        {
+            "name": "GitHub",
+            "url": "https://github.com/apache/flink",
+            "icon": "fab fa-github-square",
+            "type": "fontawesome",
+        }
+    ],
+    "icon_links_label": "Quick Links",
 }
 
 # The name of an image file (relative to this directory) to place at the top

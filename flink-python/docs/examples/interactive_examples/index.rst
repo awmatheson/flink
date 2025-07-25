@@ -16,12 +16,13 @@
     limitations under the License.
    ################################################################################
 
-Word Count
-==========
-
-.. literalinclude:: ../../../pyflink/examples/datastream/word_count.py
-
-Streaming Word Count
 ====================
 
-.. literalinclude:: ../../../pyflink/examples/datastream/streaming_word_count.py
+This section contains interactive Jupyter notebook examples for PyFlink.
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+   table_api
+   datastream_api

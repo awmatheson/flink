@@ -16,12 +16,29 @@
     limitations under the License.
    ################################################################################
 
-Word Count
-==========
+===============
 
-.. literalinclude:: ../../../pyflink/examples/datastream/word_count.py
+This section is for developers who want to contribute to the PyFlink project itself.
 
-Streaming Word Count
-====================
+.. toctree::
+    :maxdepth: 2
+    :caption: Development Setup
 
-.. literalinclude:: ../../../pyflink/examples/datastream/streaming_word_count.py
+    setup
+    building
+    testing
+
+.. toctree::
+    :maxdepth: 2
+    :caption: Contributing
+
+    contributing
+    code_style
+    pull_requests
+
+.. toctree::
+    :maxdepth: 2
+    :caption: Architecture
+
+    architecture
+    internals

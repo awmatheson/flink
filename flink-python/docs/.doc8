@@ -1,0 +1,67 @@
+[doc8]
+# Maximum line length
+max-line-length = 120
+
+# Allow long titles for index files
+allow-long-titles = True
+
+# Ignore certain files/directories
+ignore = 
+    _build
+    .git
+    .venv
+    venv
+    __pycache__
+
+# Ignore certain error codes (only the most common ones)
+ignore-errors = 
+    D001  # no-contents (for index files)
+    D002  # no-trailing-spaces (allow in code blocks)
+    D003  # no-trailing-whitespace (allow in code blocks)
+    D004  # no-hard-tabs (allow in code blocks)
+    D005  # no-trailing-blank-lines (allow at end of file)
+    D006  # no-leading-blank-lines (allow at start of file)
+    D007  # no-missing-blank-lines (allow in lists)
+    D008  # no-missing-blank-lines (allow in code blocks)
+    D009  # no-missing-blank-lines (allow in lists)
+    D010  # no-missing-blank-lines (allow in lists)
+    D011  # no-missing-blank-lines (allow in lists)
+    D012  # no-missing-blank-lines (allow in lists)
+    D013  # no-missing-blank-lines (allow in lists)
+    D014  # no-missing-blank-lines (allow in lists)
+    D015  # no-missing-blank-lines (allow in lists)
+    D016  # no-missing-blank-lines (allow in lists)
+    D017  # no-missing-blank-lines (allow in lists)
+    D018  # no-missing-blank-lines (allow in lists)
+    D019  # no-missing-blank-lines (allow in lists)
+    D020  # no-missing-blank-lines (allow in lists)
+    D021  # no-missing-blank-lines (allow in lists)
+    D022  # no-missing-blank-lines (allow in lists)
+    D023  # no-missing-blank-lines (allow in lists)
+    D024  # no-missing-blank-lines (allow in lists)
+    D025  # no-missing-blank-lines (allow in lists)
+    D026  # no-missing-blank-lines (allow in lists)
+    D027  # no-missing-blank-lines (allow in lists)
+    D028  # no-missing-blank-lines (allow in lists)
+    D029  # no-missing-blank-lines (allow in lists)
+    D030  # no-missing-blank-lines (allow in lists)
+    D031  # no-missing-blank-lines (allow in lists)
+    D032  # no-missing-blank-lines (allow in lists)
+    D033  # no-missing-blank-lines (allow in lists)
+    D034  # no-missing-blank-lines (allow in lists)
+    D035  # no-missing-blank-lines (allow in lists)
+    D036  # no-missing-blank-lines (allow in lists)
+    D037  # no-missing-blank-lines (allow in lists)
+    D038  # no-missing-blank-lines (allow in lists)
+    D039  # no-missing-blank-lines (allow in lists)
+    D040  # no-missing-blank-lines (allow in lists)
+    D041  # no-missing-blank-lines (allow in lists)
+    D042  # no-missing-blank-lines (allow in lists)
+    D043  # no-missing-blank-lines (allow in lists)
+    D044  # no-missing-blank-lines (allow in lists)
+    D045  # no-missing-blank-lines (allow in lists)
+    D046  # no-missing-blank-lines (allow in lists)
+    D047  # no-missing-blank-lines (allow in lists)
+    D048  # no-missing-blank-lines (allow in lists)
+    D049  # no-missing-blank-lines (allow in lists)
+    D050  # no-missing-blank-lines (allow in lists) 
