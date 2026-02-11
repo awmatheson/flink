@@ -27,14 +27,17 @@ The built documentation is published at:
 
 ## Prerequisites
 
-Install the Sphinx dependencies from the project's `pyproject.toml`:
+This project uses [uv](https://docs.astral.sh/uv/) for dependency management. Install uv if you haven't already:
 
 ```bash
-cd flink-python
-pip install -e ".[sphinx]"
+# macOS/Linux
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# Or with Homebrew
+brew install uv
 ```
 
-This installs Sphinx, the pydata theme, sphinx-intl, and other required packages.
+Dependencies are defined in `pyproject.toml` and will be automatically installed when you run `make` commands.
 
 ## Building the Documentation
 
@@ -69,7 +72,7 @@ This runs `gettext` → `sphinx-intl update` → Chinese HTML build into `_build
 ### Serving locally
 
 ```bash
-python -m http.server -d _build/html 8080
+make serve
 ```
 
 Then open http://localhost:8080/.
